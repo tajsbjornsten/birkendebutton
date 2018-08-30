@@ -39,12 +39,6 @@ int lastButtonState2 = 0;    // previous state of the button
 int buttonState3 = 0;         // current state of the button
 int lastButtonState3 = 0;    // previous state of the button
 
-
-
-
-
-
-
 WiFiClient espClient;
 PubSubClient client(espClient);
 
