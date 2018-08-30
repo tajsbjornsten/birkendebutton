@@ -25,7 +25,6 @@ const int buttonPin0 = 0;    // the pin that the pushbutton 0 is attached to
 const int buttonPin1 = 1;    // the pin that the pushbutton 1 is attached to
 const int buttonPin2 = 2;    // the pin that the pushbutton 2 is attached to
 const int buttonPin3 = 3;    // the pin that the pushbutton 3 is attached to
-// const int chartsPin = LED_BUILTIN;       // the pin that the LED is attached to
 
 // Variables will change for button 0:
 int buttonState0 = 0;         // current state of the button
@@ -39,7 +38,7 @@ int lastButtonState2 = 0;    // previous state of the button
 // Variables will change for button 3:
 int buttonState3 = 0;         // current state of the button
 int lastButtonState3 = 0;    // previous state of the button
-// Gobal Variables will change
+
 
 
 
