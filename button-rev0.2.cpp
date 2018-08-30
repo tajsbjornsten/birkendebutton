@@ -1,5 +1,6 @@
 /*
 MQTT Button with ESP-01 and OTA
+by Tajs Bjørnsten Søgaard
 */
 #include <EEPROM.h>
 #include <ESP8266WiFi.h>
@@ -13,7 +14,7 @@ MQTT Button with ESP-01 and OTA
 const char* ssid = "**********";
 const char* password = "*********";
 const char* mqtt_server = "**********";
-const char* mqtt_topic = "home"
+// const char* mqtt_topic = "home" // for use later
 const char* hostnameOTA = "ButtonSleepingRoom";
 const char* hostnameWiFi = "ButtonSleepingRoom";
 const char* hostnameMQTT = "ButtonSleepingRoom";
@@ -39,7 +40,7 @@ int lastButtonState2 = 0;    // previous state of the button
 int buttonState3 = 0;         // current state of the button
 int lastButtonState3 = 0;    // previous state of the button
 // Gobal Variables will change
-// int buttonPushCounter = 0;   // counter for the number of button presses
+
 
 
 
@@ -77,7 +78,6 @@ void setup()
     pinMode(buttonPin2, INPUT_PULLUP);
     pinMode(buttonPin3, FUNCTION_3);
     pinMode(buttonPin3, INPUT_PULLUP);
-    // initialize the LED as an output:
 
   }
   ArduinoOTA.setHostname(hostnameOTA);
@@ -103,10 +103,10 @@ ArduinoOTA.handle();
     // if the state has changed, increment the counter
     if (buttonState0 == LOW) {
       client.publish("home/button/0", "on"); //
-      // if the current state is HIGH then the button
+      // if the current state is LOW then the button
       // went from off to on:
     } else {
-      // if the current state is LOW then the button
+      // if the current state is HIGH then the button
       // went from on to off:
       client.publish("home/button/0", "off"); //
     }
@@ -126,10 +126,10 @@ ArduinoOTA.handle();
     // if the state has changed, increment the counter
     if (buttonState1 == LOW) {
       client.publish("home/button/1", "on"); //
-      // if the current state is HIGH then the button
+      // if the current state is LOW then the button
       // went from off to on:
     } else {
-      // if the current state is LOW then the button
+      // if the current state is HIGH then the button
       // went from on to off:
       client.publish("home/button/1", "off"); //
     }
@@ -149,10 +149,10 @@ ArduinoOTA.handle();
     // if the state has changed, increment the counter
     if (buttonState2 == LOW) {
       client.publish("home/button/2", "on"); //
-      // if the current state is HIGH then the button
+      // if the current state is LOW then the button
       // went from off to on:
     } else {
-      // if the current state is LOW then the button
+      // if the current state is HIGH then the button
       // went from on to off:
       client.publish("home/button/2", "off"); //
     }
@@ -170,10 +170,10 @@ ArduinoOTA.handle();
     // if the state has changed, increment the counter
     if (buttonState3 == LOW) {
       client.publish("home/button/3", "on"); //
-      // if the current state is HIGH then the button
+      // if the current state is LOW then the button
       // went from off to on:
     } else {
-      // if the current state is LOW then the button
+      // if the current state is HIGH then the button
       // went from on to off:
       client.publish("home/button/3", "off"); //
     }
